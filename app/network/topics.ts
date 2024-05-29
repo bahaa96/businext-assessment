@@ -1,19 +1,34 @@
-import instance from "./instance";
+import { instance } from "./instance";
 
-interface requestFetchAllTopicsArgs {
+interface RequestFetchAllTopicsArgs {
+  rpi: number;
+  rps: number;
   options?: {
     signal?: AbortSignal;
   };
 }
 
-interface requestFetchAllTopicsResponse {
+interface RequestFetchAllTopicsResponse {
   data: any;
 }
 
-const requestFetchAllTopics = () => {
-  const { data } = instance.get<requestFetchAllTopicsResponse>("/topics");
+const requestFetchAllTopics = async ({
+  rpi,
+  rps,
+  options,
+}: RequestFetchAllTopicsArgs) => {
+  const { data } = await instance.get<RequestFetchAllTopicsResponse>(
+    "/topics",
+    {
+      params: {
+        page: rpi,
+        per_page: rps,
+      },
+      signal: options?.signal,
+    }
+  );
 
-  return data;
+  return { data };
 };
 
 export { requestFetchAllTopics };
