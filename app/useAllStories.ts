@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
 import { Story } from "./domain-models";
-import { requestFetchAllUsers } from "./network";
+import { requestFetchAllStories } from "./network";
 
 interface State {
   isLoading: boolean;
@@ -67,7 +67,7 @@ const useAllStories = () => {
 
     dispatch({ type: "FETCH_ALL_START" });
 
-    requestFetchAllUsers({
+    requestFetchAllStories({
       options: {
         signal: controller.signal,
       },

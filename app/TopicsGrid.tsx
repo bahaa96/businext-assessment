@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Topic } from "./domain-models";
 import { memo } from "react";
+import { $fixMe } from "./types/fixme";
 
 interface IProps {
   _id: string;
@@ -13,7 +14,10 @@ const TopicsGrid = memo(
     return (
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {data.map((topic) => (
-          <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[45vh] overflow-hidden rounded-2xl">
+          <div
+            className="relative w-full h-[50vh] md:h-[60vh] lg:h-[45vh] overflow-hidden rounded-2xl"
+            key={topic.id}
+          >
             <Image
               alt={`Topic ${topic.title} Cover image`}
               src={topic.cover_photo.urls.regular}
@@ -90,7 +94,7 @@ const TopicsGrid = memo(
     previousProps.data.length === nextProps.data.length
 );
 
-function MusicIcon(props) {
+function MusicIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -111,7 +115,7 @@ function MusicIcon(props) {
   );
 }
 
-function PlayIcon(props) {
+function PlayIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -130,7 +134,7 @@ function PlayIcon(props) {
   );
 }
 
-function HeartIcon(props) {
+function HeartIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -149,7 +153,7 @@ function HeartIcon(props) {
   );
 }
 
-function ShareIcon(props) {
+function ShareIcon(props: $fixMe) {
   return (
     <svg
       {...props}

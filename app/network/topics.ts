@@ -1,3 +1,4 @@
+import { Topic } from "@/domain-models";
 import { instance } from "./instance";
 
 interface RequestFetchAllTopicsArgs {
@@ -8,25 +9,18 @@ interface RequestFetchAllTopicsArgs {
   };
 }
 
-interface RequestFetchAllTopicsResponse {
-  data: any;
-}
-
 const requestFetchAllTopics = async ({
   rpi,
   rps,
   options,
 }: RequestFetchAllTopicsArgs) => {
-  const { data } = await instance.get<RequestFetchAllTopicsResponse>(
-    "/topics",
-    {
-      params: {
-        page: rpi,
-        per_page: rps,
-      },
-      signal: options?.signal,
-    }
-  );
+  const { data } = await instance.get("/topics", {
+    params: {
+      page: rpi,
+      per_page: rps,
+    },
+    signal: options?.signal,
+  });
 
   return { data };
 };

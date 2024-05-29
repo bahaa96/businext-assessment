@@ -13,6 +13,7 @@ import { useAllTopics } from "./useAllTopics";
 import StoriesCarousel from "./StoriesCarousel";
 import TopicsGrid from "./TopicsGrid";
 import ShortsCarousel from "./ShortsCarousel";
+import { $fixMe } from "./types/fixme";
 
 const IMAGE_PLACEHOLDER_URL =
   "https://generated.vusercontent.net/placeholder.svg";
@@ -399,7 +400,7 @@ export default function Home() {
   );
 }
 
-function InboxIcon(props) {
+function InboxIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -419,7 +420,7 @@ function InboxIcon(props) {
   );
 }
 
-function SearchIcon(props) {
+function SearchIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -439,7 +440,7 @@ function SearchIcon(props) {
   );
 }
 
-function TwitterIcon(props) {
+function TwitterIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -458,7 +459,7 @@ function TwitterIcon(props) {
   );
 }
 
-function UploadIcon(props) {
+function UploadIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -479,7 +480,7 @@ function UploadIcon(props) {
   );
 }
 
-function WatchIcon(props) {
+function WatchIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -501,7 +502,7 @@ function WatchIcon(props) {
   );
 }
 
-function UsersIcon(props) {
+function UsersIcon(props: $fixMe) {
   return (
     <svg
       {...props}
@@ -523,7 +524,7 @@ function UsersIcon(props) {
   );
 }
 
-function HomeIcon(props) {
+function HomeIcon(props: $fixMe) {
   return (
     <svg
       {...props}

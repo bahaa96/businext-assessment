@@ -1,3 +1,3 @@
 export { requestFetchAllTopics } from "./topics";
-export { requestFetchAllUsers } from "./users";
+export { requestFetchAllStories } from "./stories";
 export { requestFetchAllShorts } from "./shorts";

@@ -9,7 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Short } from "./domain-models";
-import { FC, memo } from "react";
+import { memo } from "react";
+import { $fixMe } from "./types/fixme";
 
 interface IProps {
   _id: string;
@@ -32,7 +33,10 @@ const ShortsCarousel = memo(
             <CarouselItem>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {data.slice(0, 5).map((short) => (
-                  <div className="relative group overflow-hidden rounded-lg">
+                  <div
+                    className="relative group overflow-hidden rounded-lg"
+                    key={short.id}
+                  >
                     <Link className="absolute inset-0 z-10" href="#">
                       <span className="sr-only">View Video</span>
                     </Link>
@@ -53,7 +57,10 @@ const ShortsCarousel = memo(
             <CarouselItem>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {data.slice(5, 10).map((short) => (
-                  <div className="relative group overflow-hidden rounded-lg">
+                  <div
+                    className="relative group overflow-hidden rounded-lg"
+                    key={short.id}
+                  >
                     <Link className="absolute inset-0 z-10" href="#">
                       <span className="sr-only">View Video</span>
                     </Link>
@@ -83,7 +90,7 @@ const ShortsCarousel = memo(
     previousProps.data.length === nextProps.data.length
 );
 
-function PlayIcon(props) {
+function PlayIcon(props: $fixMe) {
   return (
     <svg
       {...props}

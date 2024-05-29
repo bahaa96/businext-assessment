@@ -23,9 +23,12 @@ const StoriesCarousel = memo(
       <div className="flex flex-col gap-6 w-full max-w-6xl mx-auto px-4 md:px-6">
         <Carousel className="w-full">
           <CarouselContent className="py-2">
-            {data.map((user) => {
+            {data.map((story) => {
               return (
-                <CarouselItem className="basis-1/3 md:basis-1/12">
+                <CarouselItem
+                  className="basis-1/3 md:basis-1/12"
+                  key={story.id}
+                >
                   <Link className="group" href="#">
                     <div className="relative w-16 h-16 m-auto">
                       <Avatar
@@ -35,12 +38,12 @@ const StoriesCarousel = memo(
                             : "ring-gray-900/5"
                         } group-hover:ring-primary dark:border-gray-800 dark:ring-gray-800`}
                       >
-                        <AvatarImage alt="@shadcn" src={user.image} />
+                        <AvatarImage alt="@shadcn" src={story.image} />
                         <AvatarFallback>AC</AvatarFallback>
                       </Avatar>
                     </div>
                     <div className="mt-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-                      {user.firstName}
+                      {story.firstName}
                     </div>
                   </Link>
                 </CarouselItem>
